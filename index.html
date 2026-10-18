@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2b">
+  <meta name="description" content="Ambiente pessoal de estudos teológicos: currículo, leituras, exercícios, avaliações e anotações.">
+  <title>Seminário Teológico | Ambiente de Estudos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="Página inicial">
+        <span class="brand-mark">✦</span>
+        <span class="brand-copy"><strong>SEMINÁRIO</strong><small>FORMAÇÃO TEOLÓGICA</small></span>
+      </a>
+      <div class="sidebar-label">AMBIENTE DE ESTUDO</div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-link active" data-view="inicio"><span class="nav-icon">⌂</span> Painel geral</button>
+        <button class="nav-link" data-view="curriculo"><span class="nav-icon">▤</span> Grade curricular</button>
+        <button class="nav-link" data-view="biblioteca"><span class="nav-icon">▥</span> Minha biblioteca</button>
+        <button class="nav-link" data-view="caderno"><span class="nav-icon">✎</span> Caderno teológico</button>
+        <button class="nav-link" data-view="avaliacoes"><span class="nav-icon">✓</span> Exercícios e provas</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="verse-card">
+          <span class="verse-label">LEMBRETE DE ESTUDO</span>
+          <p>“Examinai tudo. Retende o bem.”</p>
+          <small>1 Tessalonicenses 5:21</small>
+        </div>
+        <div class="sidebar-foot">Seu espaço pessoal de aprendizagem</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumbs"><span>Formação teológica</span><span class="crumb-sep">/</span><strong id="breadcrumbCurrent">Painel geral</strong></div>
+        <div class="top-actions">
+          <label class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Buscar disciplina, livro..." aria-label="Buscar no curso"></label>
+          <button class="icon-button" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">◐</button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-inicio">
+        <div class="welcome-banner">
+          <div class="welcome-text">
+            <div class="eyebrow"><span class="eyebrow-line"></span> SUA JORNADA DE FORMAÇÃO</div>
+            <h1>Conhecimento que<br><em>transforma</em> o ensino.</h1>
+            <p>Uma jornada organizada para aprofundar as Escrituras, compreender a teologia cristã e crescer no serviço da Igreja.</p>
+            <button class="button button-gold" data-goto="curriculo">Continuar meus estudos <span>→</span></button>
+          </div>
+          <div class="banner-emblem" aria-hidden="true">
+            <div class="emblem-ring"><div class="emblem-cross">✝</div><div class="emblem-stars">✦　✧　✦</div><div class="emblem-caption">VERBUM DEI</div></div>
+          </div>
+          <div class="banner-bottom-line"></div>
+        </div>
+
+        <div class="section-heading">
+          <div><div class="eyebrow muted">VISÃO GERAL</div><h2>Seu progresso acadêmico</h2></div>
+          <span class="term-chip">PLANO DE 24 MESES</span>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Módulos concluídos</span><span class="stat-icon gold-icon">▤</span></div><div class="stat-value"><span id="modulesDone">0</span><small> / 12</small></div><div class="mini-track"><span id="moduleTrack"></span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Aulas concluídas</span><span class="stat-icon blue-icon">✓</span></div><div class="stat-value"><span id="lessonsDone">0</span><small> / 48</small></div><div class="mini-track"><span id="lessonTrack"></span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Leituras registradas</span><span class="stat-icon green-icon">▥</span></div><div class="stat-value"><span id="readingsDone">0</span><small> tarefas</small></div><p class="stat-note">Marque cada etapa quando terminar.</p></article>
+          <article class="stat-card"><div class="stat-top"><span>Ritmo recomendado</span><span class="stat-icon purple-icon">◷</span></div><div class="stat-value">8–10<small> h/semana</small></div><p class="stat-note">Constância acima de intensidade.</p></article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel continue-panel">
+            <div class="panel-heading"><div><div class="eyebrow muted">RETOME DE ONDE PAROU</div><h2>Trilha de aprendizagem</h2></div><button class="text-button" data-goto="curriculo">Ver currículo →</button></div>
+            <div id="continueCard" class="continue-card"></div>
+          </section>
+          <section class="panel weekly-panel">
+            <div class="panel-heading"><div><div class="eyebrow muted">PLANO DE ESTUDO</div><h2>Rotina semanal</h2></div></div>
+            <div class="week-list">
+              <div><span class="day-dot">SEG</span><p><strong>Leitura bíblica</strong><small>Contexto e observações</small></p><span class="week-time">1h30</span></div>
+              <div><span class="day-dot">TER</span><p><strong>Livro principal</strong><small>Leitura e fichamento</small></p><span class="week-time">1h30</span></div>
+              <div><span class="day-dot">QUA</span><p><strong>Análise do texto</strong><small>Exegese e interpretação</small></p><span class="week-time">1h30</span></div>
+              <div><span class="day-dot">QUI</span><p><strong>Comparação teológica</strong><small>Argumentos e objeções</small></p><span class="week-time">1h30</span></div>
+              <div><span class="day-dot">SEX</span><p><strong>Caderno teológico</strong><small>Organize suas conclusões</small></p><span class="week-time">1h</span></div>
+              <div><span class="day-dot">SÁB</span><p><strong>Revisão e exercício</strong><small>Escrita e avaliação</small></p><span class="week-time">1–2h</span></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="section-block">
+          <div class="panel-heading"><div><div class="eyebrow muted">CURRÍCULO</div><h2>Explore seus módulos</h2></div><button class="text-button" data-goto="curriculo">Ver todos →</button></div>
+          <div class="module-card-grid" id="featuredModules"></div>
+        </section>
+        <div class="disclaimer"><strong>Nota acadêmica:</strong> este é um ambiente autodidata de estudos. A conclusão do percurso não confere diploma ou equivalência acadêmica oficial.</div>
+      </section>
+
+      <section class="view" id="view-curriculo">
+        <div class="page-title-row"><div><div class="eyebrow muted">PERCURSO DE 24 MESES</div><h1>Grade curricular</h1><p>Do fundamento bíblico à pesquisa teológica e à prática ministerial.</p></div><span class="term-chip">12 MÓDULOS · 48 ETAPAS</span></div>
+        <div class="filter-row"><div class="filter-tabs" id="moduleFilters"><button class="filter-tab selected" data-filter="todos">Todos os módulos</button><button class="filter-tab" data-filter="fundamentos">Fundamentos</button><button class="filter-tab" data-filter="doutrina">Doutrina</button><button class="filter-tab" data-filter="ministério">Ministério</button></div><div class="small-muted">Selecione um módulo para ver aulas e atividades.</div></div>
+        <div id="curriculumList" class="curriculum-list"></div>
+      </section>
+
+      <section class="view" id="view-biblioteca">
+        <div class="page-title-row"><div><div class="eyebrow muted">LEITURAS DE REFERÊNCIA</div><h1>Minha biblioteca</h1><p>Organize as obras que acompanham sua formação. Os PDFs ficam no seu repositório, dentro da pasta <code>livros/</code>.</p></div></div>
+        <div class="library-note"><span class="note-symbol">i</span><div><strong>Como conectar seus PDFs</strong><p>Copie os arquivos para a pasta <code>livros</code> deste projeto e use os nomes indicados nos cartões. O site não incorpora nem redistribui os livros automaticamente.</p></div></div>
+        <div class="library-grid" id="libraryGrid"></div>
+        <h2 class="subsection-title">Referências complementares</h2>
+        <div class="reference-list">
+          <div><span class="ref-number">01</span><div><strong>Declaração de Fé das Assembleias de Deus</strong><p>Referência denominacional para consulta e comparação doutrinária.</p><a href="https://cgadb.org.br/declaracao-de-fe/" target="_blank" rel="noreferrer">Abrir fonte oficial ↗</a></div><span class="external-mark">↗</span></div>
+          <div><span class="ref-number">02</span><div><strong>Biblioteca bíblica e recursos de estudo</strong><p>Materiais complementares para compreender a estrutura e os temas dos livros bíblicos.</p><a href="https://www.sbb.org.br/" target="_blank" rel="noreferrer">Sociedade Bíblica do Brasil ↗</a></div><span class="external-mark">↗</span></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-caderno">
+        <div class="page-title-row"><div><div class="eyebrow muted">MEMÓRIA DO SEU ESTUDO</div><h1>Caderno teológico</h1><p>Registre definições, observações exegéticas, dúvidas e conclusões. As notas são salvas neste navegador.</p></div><button class="button button-dark" id="exportNotes">Exportar anotações ↓</button></div>
+        <div class="notes-layout">
+          <aside class="notes-sidebar"><label for="noteModule">Disciplina</label><select id="noteModule"></select><label for="noteTitle">Título da anotação</label><input id="noteTitle" type="text" placeholder="Ex.: Eleição em Romanos 9"><button class="button button-gold full-width" id="saveNote">Salvar anotação</button><p class="small-muted">Dica: anote a passagem, a observação do texto, a interpretação e a aplicação em campos separados.</p></aside>
+          <div class="notes-editor"><label for="noteBody">Suas anotações</label><textarea id="noteBody" rows="12" placeholder="Referência bíblica:&#10;Observações do texto:&#10;Interpretação:&#10;Argumentos e objeções:&#10;Conclusão provisória:"></textarea><div class="editor-footer"><span id="noteStatus">Nenhuma anotação selecionada</span><button class="text-button danger-text" id="deleteNote" disabled>Excluir nota</button></div><h3>Anotações salvas</h3><div id="savedNotes" class="saved-notes"></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-avaliacoes">
+        <div class="page-title-row"><div><div class="eyebrow muted">APRENDIZAGEM ATIVA</div><h1>Exercícios e provas</h1><p>Teste sua compreensão, desenvolva argumentos e pratique a interpretação cuidadosa das Escrituras.</p></div></div>
+        <div class="assessment-grid">
+          <article class="assessment-card"><span class="assessment-icon">01</span><div class="eyebrow muted">HERMENÊUTICA</div><h2>Interpretação bíblica</h2><p>Leia Romanos 9:6–24. Identifique o argumento de Paulo no contexto de Romanos 9–11 e compare leituras arminianas e reformadas sem caricaturar nenhuma delas.</p><button class="button button-outline" data-assignment="exegese">Abrir atividade →</button></article>
+          <article class="assessment-card"><span class="assessment-icon">02</span><div class="eyebrow muted">HISTÓRIA DA IGREJA</div><h2>Credos e concílios</h2><p>Explique como os concílios históricos contribuíram para a formulação das doutrinas de Cristo e da Trindade. Diferencie evidência histórica e interpretação posterior.</p><button class="button button-outline" data-assignment="historia">Abrir atividade →</button></article>
+          <article class="assessment-card"><span class="assessment-icon">03</span><div class="eyebrow muted">HOMILÉTICA</div><h2>Sermão expositivo</h2><p>Prepare um sermão de 20 minutos sobre Efésios 2:1–10, incluindo contexto, ideia central, explicação do texto e aplicação pastoral.</p><button class="button button-outline" data-assignment="sermao">Abrir atividade →</button></article>
+        </div>
+        <div class="panel grading-panel"><div class="panel-heading"><div><div class="eyebrow muted">CRITÉRIOS DE AVALIAÇÃO</div><h2>Como seu trabalho será avaliado</h2></div></div><div class="grading-bars"><div><span>Prova teológica</span><div class="grading-track"><i style="width:30%"></i></div><strong>30%</strong></div><div><span>Exercício exegético</span><div class="grading-track"><i style="width:25%"></i></div><strong>25%</strong></div><div><span>Trabalho escrito</span><div class="grading-track"><i style="width:30%"></i></div><strong>30%</strong></div><div><span>Defesa oral</span><div class="grading-track"><i style="width:15%"></i></div><strong>15%</strong></div></div><p class="small-muted">Critério proposto para estudo pessoal: média mínima 7,0/10 e entrega das atividades obrigatórias.</p></div>
+        <div class="panel quiz-panel"><div class="panel-heading"><div><div class="eyebrow muted">AVALIAÇÃO RÁPIDA</div><h2>Fundamentos da interpretação</h2></div><span class="term-chip">5 QUESTÕES</span></div><div id="quizRoot"></div></div>
+      </section>
+
+      <section class="view" id="view-aula">
+        <div class="page-title-row"><div><button class="back-link" data-goto="curriculo">← Voltar à grade curricular</button><div class="eyebrow muted" id="lessonKicker">MÓDULO</div><h1 id="lessonTitle">Aula</h1><p id="lessonDescription"></p></div><span class="lesson-number" id="lessonNumber">01</span></div>
+        <div class="lesson-layout">
+          <article class="lesson-main panel"><div class="lesson-meta"><span id="lessonDuration">45–60 min</span><span>•</span><span>Leitura + reflexão</span></div><div id="lessonContent" class="lesson-content"></div><div class="lesson-actions"><button class="button button-outline" id="previousLesson">← Aula anterior</button><button class="button button-gold" id="completeLesson">Marcar como concluída ✓</button><button class="button button-outline" id="nextLesson">Próxima aula →</button></div></article>
+          <aside class="lesson-aside"><div class="panel"><div class="eyebrow muted">NESTE MÓDULO</div><h3 id="asideModuleTitle"></h3><div id="asideLessonList" class="aside-lesson-list"></div></div><div class="panel reflection-panel"><div class="eyebrow muted">PARA REFLETIR</div><p id="reflectionPrompt"></p><textarea id="reflectionText" rows="5" placeholder="Escreva sua resposta..."></textarea><button class="button button-dark full-width" id="saveReflection">Salvar reflexão</button></div></aside>
+        </div>
+      </section>
+
+      <footer class="site-footer"><span>SEMINÁRIO · ESTUDO, CONTEXTO E FIDELIDADE AO TEXTO</span><span>Progresso salvo localmente neste navegador</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Fechar">×</button><div class="eyebrow muted">ATIVIDADE ACADÊMICA</div><h2 id="modalTitle"></h2><p id="modalPrompt"></p><label for="assignmentAnswer">Sua resposta / rascunho</label><textarea id="assignmentAnswer" rows="10" placeholder="Organize sua resposta com introdução, análise, referências e conclusão."></textarea><div class="modal-actions"><button class="button button-outline" id="cancelAssignment">Cancelar</button><button class="button button-gold" id="saveAssignment">Salvar rascunho</button></div></section></div>
+  <script src="app.js"></script>
+</body>
+</html>
